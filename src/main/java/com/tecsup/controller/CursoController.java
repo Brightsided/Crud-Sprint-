@@ -24,7 +24,11 @@ public class CursoController {
         return "listView";
     }
 
-
-
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home(Model model) {
+        model.addAttribute("titulo","Listado de cursos");
+        model.addAttribute("cursos",servicio.FindAllCourse());
+        return "listView";
+    }
 
 }
